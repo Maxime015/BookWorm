@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 📱 Projet d'Application MERN Stack avec React Native
 
@@ -70,3 +71,7 @@ Le **tutoriel complet** guide pas à pas la construction de l'API backend avec N
 ---
 
 📚 Ce projet est une **excellente ressource pédagogique** pour apprendre le développement **full-stack mobile** et **backend**, avec un focus sur la création d’applications **performantes**, **sécurisées** et **multi-plateformes**.
+=======
+# BookWorm
+Application mobile et web MERN Stack de recommandations de livres. Authentification sécurisée, gestion des profils, création/suppression de recommandations, UI personnalisable, backend Node/Express/MongoDB, frontend React Native. Testable sans Mac ni Android Studio.
+>>>>>>> 8234523809aa4126165ea1392b31a20b4e1810a9
