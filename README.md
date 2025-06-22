@@ -74,4 +74,29 @@ Le **tutoriel complet** guide pas à pas la construction de l'API backend avec N
 =======
 # BookWorm
 Application mobile et web MERN Stack de recommandations de livres. Authentification sécurisée, gestion des profils, création/suppression de recommandations, UI personnalisable, backend Node/Express/MongoDB, frontend React Native. Testable sans Mac ni Android Studio.
+---
+
+
+## 📸 Screenshots
+
+<div style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+
+  <img src="./screenshots/1.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/2.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/3.jpg" style="width: 32%; margin-bottom: 10px;" />
+
+  <img src="./screenshots/4.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/5.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/6.jpg" style="width: 32%; margin-bottom: 10px;" />
+
+  <img src="./screenshots/a.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/cc.jpg" style="width: 32%; margin-bottom: 10px;" />
+  <img src="./screenshots/b.jpg" style="width: 32%; margin-bottom: 10px;" />
+
+  <img src="./screenshots/c.jpg" style="width: 40%; margin-bottom: 10px;" />
+  <img src="./screenshots/d.jpg" style="width: 40%; margin-bottom: 10px;" />
+
+</div>
+
+
 >>>>>>> 8234523809aa4126165ea1392b31a20b4e1810a9

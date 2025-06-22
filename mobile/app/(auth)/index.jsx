@@ -1,14 +1,8 @@
-// ✅ Polyfill pour Web
-if (typeof setImmediate === 'undefined') {
-  global.setImmediate = (fn, ...args) => setTimeout(fn, 0, ...args);
-}
-
 import React, { useRef, useState } from 'react';
 import {
   StyleSheet,
   View,
   Text,
-  SafeAreaView,
   Image,
   useWindowDimensions,
   Animated,
@@ -16,6 +10,7 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { useNavigation } from '@react-navigation/native';
+import SafeScreen from '../../components/SafeScreen'; // Composant sûr
 
 const slides = [
   {
@@ -65,20 +60,20 @@ export default function LandingPage() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Swiper
-        ref={swiper}
-        showsPagination={false}
-        loop={false}
-        onIndexChanged={setSlide}
-        onScroll={Animated.event(
-          [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-          { useNativeDriver: false }
-        )}
-        scrollEventThrottle={1}
-      >
-        {slides.map(({ title, message, action, image }, index) => (
-          <Animated.View key={index} style={[styles.slide, { opacity: contentOpacity }]}>
+    <Swiper
+      ref={swiper}
+      showsPagination={false}
+      loop={false}
+      onIndexChanged={setSlide}
+      onScroll={Animated.event(
+        [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+        { useNativeDriver: false }
+      )}
+      scrollEventThrottle={1}
+    >
+      {slides.map(({ title, message, action, image }, index) => (
+        <SafeScreen key={index}>
+          <Animated.View style={[styles.slide, { opacity: contentOpacity }]}>
             <Image
               source={image}
               resizeMode="contain"
@@ -89,30 +84,19 @@ export default function LandingPage() {
                 marginBottom: 20,
               }}
             />
-            <Text
-              style={styles.slideTitle}
-              adjustsFontSizeToFit
-              numberOfLines={2}
-            >
-              {title}
-            </Text>
+            <Text style={styles.slideTitle}>{title}</Text>
             <Text style={styles.slideText}>{message}</Text>
-
             <TouchableOpacity style={styles.button} onPress={() => handleButtonPress(index)}>
               <Text style={styles.buttonText}>{action}</Text>
             </TouchableOpacity>
           </Animated.View>
-        ))}
-      </Swiper>
-    </SafeAreaView>
+        </SafeScreen>
+      ))}
+    </Swiper>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#e8ecf4',
-  },
   slide: {
     flex: 1,
     justifyContent: 'flex-end',
